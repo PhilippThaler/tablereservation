@@ -1,5 +1,7 @@
 package com.akif.tablereservation.business;
 
+import com.akif.tablereservation.persistence.model.repository.Repository;
+import com.akif.tablereservation.persistence.model.repository.ReservationRepository;
 import com.project.akif.Reservation;
 
 import java.text.ParseException;
@@ -7,7 +9,11 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class Service implements ReservationService{
-    private Repository;
+    private Repository repository;
+
+    public Service() {
+        repository= ReservationRepository.getInstance();
+    }
 
     @Override
     public List<Reservation> getAllReservations() {
