@@ -1,5 +1,7 @@
 package com.akif.tablereservation.presentation.view;
 
+import com.akif.tablereservation.business.ReservationService;
+import com.akif.tablereservation.business.Service;
 import com.akif.tablereservation.presentation.input.Input;
 import com.akif.tablereservation.presentation.input.InputHandler;
 import com.akif.tablereservation.presentation.input.validation.ValidationType;
@@ -32,8 +34,7 @@ public class TableReservationMenu implements Menu {
                 showReservations();
                 break;
             case 9:
-                Main.exit();
-                break;
+                return;
             default:
                 System.out.println("something went wrong");
                 showMenu();
@@ -58,7 +59,7 @@ public class TableReservationMenu implements Menu {
     }
 
     private void showReservations() {
-        for (Reservation reservation : service.getAllReservations()) {
+        for (com.project.akif.Reservation reservation : service.getAllReservations()) {
             System.out.println(reservation);
         }
     }
